@@ -1,0 +1,12 @@
+<h1><%= @owner.full_name %></h1>
+<h3>Owning pets:</h3>
+<ul>
+  <% @owner.pets.each do |pet|%>
+    <li><%= pet.name %></li>
+  <% end %>
+</ul>
+<br>
+
+<%= button_to "Delete", @owner, method: :delete %><br>
+<button><%= link_to "Index", owners_path %></button><br><br>
+<button><%= link_to "Add a Pet", new_pet_path %></button>

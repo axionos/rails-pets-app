@@ -1,0 +1,4 @@
+<h1><%= @pet.name %></h1>
+<h3>Owner:</h3>
+<%= @pet.owner.full_name %><br><br>
+<%= button_to "Delete", @pet, method: :delete %>

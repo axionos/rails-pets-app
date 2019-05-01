@@ -1,0 +1,15 @@
+<h1>New Pet</h1>
+
+<% if flash[:notice] %>
+  <h3><%= flash[:notice] -%></h3>
+<% end %>
+
+<%= form_for @pet do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :animal_type %>
+  <%= f.text_field :animal_type %>
+  <%= f.label :owner %>
+  <%= f.collection_select(:owner_id, Owner.all, :id, :first_name) %>
+  <%= f.submit %>
+<% end %>
